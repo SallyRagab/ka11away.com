@@ -1,3 +1,2 @@
 # my-Website
-
-- inline elements don't apply margin-top or margin-bottom property as it only move horizontally not vertically when the display is set to inline (which is the default) if set to display inline or inline-block it can move vertically.
+In this project, I'm trying to create a duplicate version of this website http://ka11away.com/
