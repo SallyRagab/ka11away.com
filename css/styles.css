@@ -69,3 +69,27 @@ ul.activities li {
   margin-bottom: 300px;
 }
 /* -- Helpers -- */
+.mt1 {
+  margin-top: 5px;
+}
+.mt2 {
+  margin-top: 10px;
+}
+.mb1 {
+  margin-bottom: 5px;
+}
+.mb2 {
+  margin-bottom: 10px;
+}
+.ml1 {
+  margin-left: 5px;
+}
+.ml2 {
+  margin-left: 10px;
+}
+.mr1 {
+  margin-right: 5px;
+}
+.mr2 {
+  margin-right: 10px;
+}
