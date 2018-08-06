@@ -41,9 +41,9 @@ a:hover {
   margin-right: auto;
   border-radius: 50%;
 }
-#online-presence, #abilities-first {
+/* #online-presence, #abilities-first {
   display: none;
-}
+} */
 .subresult {
   padding-left: 10%;
 }
@@ -53,3 +53,19 @@ a:hover {
 .learn {
   cursor: pointer;
 }
+ul.activities li {
+  display: inline;
+  margin: 10px 10px 0;
+  padding-left: 5%;
+}
+/* #terminal-line {
+  display: none;
+} */
+#term-prompt {
+  background-color: #000;
+  border: none;
+  color: #7FF709;
+  outline: none;
+  margin-bottom: 300px;
+}
+/* -- Helpers -- */
