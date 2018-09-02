@@ -69,5 +69,55 @@ $(document).ready (function() {
       'href': 'https://github.com/kallaway/',
       'target': '_blank'
     });
+
+    let twitterLink = $('<a>Twitter</a>').attr({
+      'href': 'http://www.codewars.com/users/sally_dev',
+      'target': '_blank'
+    });
+
+    let linkedinlink = $('<a>LinkedIn</a>').attr({
+      'href': 'https://ca.linkedin.com/in/sallyragab',
+      'target': '_blank'
+    })
+
+    codewars.append(codewarsLink);
+    github.append(githubLink);
+    Linkedin.append(linkedinLink);
+    twitter.append(twitterLink);
+
+
+    console.log("$$$ Github element is currently: ");
+    console.log(github);
+
+    contact.append(codewars);
+    contact.append(github);
+    contact.append(linkedin);
+    contact.append(twitter);
+
+    console.log("*** Working with the DOM: contactEl - ");
+    console.log(contact);
+    return contact;
+
+    arrowNavigationMode = true;
+  }
+
+  function generatePortfolioHTML() {
+    let portfolioContainer = $('<div></div>');
+
+    let portfolioLink = $('<a>here</a>').attr({
+      'href': 'https://codepen.io/kallaway/',
+      'target': '_blank'
+    });
+
+    let portfolioText = "You can see my portfolio of projects live ";
+
+    portfolioContainer.append(portfolioText);
+    portfolioContainer.append(portfolioLink);
+
+    return portfolioContainer;
+  }
+
+  function generateSkillHTML() {
+
   }
 }
