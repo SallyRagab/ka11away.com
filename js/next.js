@@ -62,7 +62,7 @@ $(document).ready (function() {
     let codewars = $('<li></li>');
     let github = $('<li></li>');
     let linkedin = $('<li></li>');
-    let  twitter = $('<li></li>');
+    let twitter = $('<li></li>');
 
 
     let githubLink = $('<a>Github</a>').attr({
@@ -118,6 +118,28 @@ $(document).ready (function() {
   }
 
   function generateSkillHTML() {
+    let skillsFullOne = $('<div id="skills"></div>');
 
+    let skillsFull = $('<div id="skills"><p>> list skill</p><p>> where &lt;skill&gt; is one of:<skill><p class= "subresult">HTML5, CSS3, ReactJS, D3, GIT and Github, </p></div><div id="familiar"><p>> list familiar area:</p><p>> where &lt;area&gt; is one of:</p><p class="subresult">Haxe,OpenFL, Python, THREE.js, Node.js</p></div>')
+  }
+
+  // <li><i class="fa fa-suitcase"></i> <a href="https://www.vretta.com/" target="_blank">work</a></li>
+
+  let shortBio = 'Self-taught web developer, absolutely passionate about coding and the future of technology. I am constantly learning and expanding my skills. While you are reading this, I am probably busy learning something new. I am interested in habit development, language learning (currently French), startups.';
+  let typeSpeedSuperFast = 30;
+  let typeSpeedSlow = 75;
+  let typeSpeedFast = 60;
+
+  var autotype = function(el, text, i, interval) {
+    if (i < text.length) {
+      $(el).append(text[i++]);
+      setTimeout(function () { autotype(el, text, i, interval); }, interval);
+      return $(el);
+    };
+
+    function clearTerminal() {
+      $('.term-output').remove();
+    }
+  }
   }
 }
