@@ -271,9 +271,49 @@ $(document).ready (function() {
           console.log("This input is the same as previous - it shouldn't be added.");
         }
 
-        
+        if ($('#term-prompt').val() !== "") {
+          termHistory.push($('#term-prompt').val());
+        }
+
+        historyDisplayedIndex++;
+        console.log("Now the terminal history is");
+        console.log(termHistory);
+
+        $('#term-prompt').val('');
+
       }
+
+      // ARROW UP
+      if (e.which == keyArrowUp) {
+        console.log("Arrow Up is pressed");
+
+        if (historyDisplayedIndex > 0) {
+          historyDisplayedIndex--;
+        }
+
+
+        console.log("The index that should have been displayed");
+        console.log(historyDisplayedIndex);
+
+        let historyHighlighted = termHistory[historyDisplayedIndex];
+        $('#term-prompt').val(historyHighlighted);
+      }
+
+      // ARROW DOWN
+      if (e.which == keyArrowDown) {
+        console.log("Arrow Down is pressed");
+        if (historyDisplayedIndex < termHistory.length) {
+          historyDisplayedIndex++;
+        }
+
+        console.log("The index that should have been displayed");
+        console.log(historyDisplayedIndex);
+
+        let historyHighlighted = termHistory[historyDisplayedIndex];
+        $('#term-prompt').val(historyHighlighted);
+      }
+
     })
-  }
-  }
+
+    init()
 }
