@@ -315,5 +315,5 @@ $(document).ready (function() {
 
     })
 
-    init()
-}
+    init();
+});
