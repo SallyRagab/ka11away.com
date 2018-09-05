@@ -140,6 +140,103 @@ $(document).ready (function() {
     function clearTerminal() {
       $('.term-output').remove();
     }
+
+    function addHTMLToTerminal(html) {
+      let $el = $('<p class="term-output"></p>').append(html).appendTo($terminal);
+    }
+
+    function addToTerminal(text, speed, isAutotype) {
+      let $el = $('<p class="term-output"></p>').text('> ').appendTo($terminal);
+
+      if (isAutotype) {
+        autotype($el, text, 0, speed);
+      } else {
+        $el.append(text);
+      }
+      return $el;
+    }
+
+    var handleInput = function() {
+      let value = $('#term-prompt').val();
+
+      console.log("***" + typeof value);
+
+      switch (value.toLowerCase()) {
+        case 'about':
+          let aboutEl = addToTerminal(about, typeSpeedFast, false);
+          break;
+        case 'bio':
+          let bioEl = addToTerminal(shortBio, typeSpeedFast, false);
+          break;
+        case 'clear':
+          clearTerminal();
+          let listEl = addToTerminal(list, typeSpeedFast, true);
+          break;
+        case 'contact':
+          let contactEl = addToTerminal(contact, typeSpeedFast, true);
+          break;
+        case "whois":
+          break;
+        case "help":
+          let helpEl = addToTerminal(listCommands, typeSpeedFast, false);
+          break;
+        case "list":
+          break;
+
+        case 'skills':
+
+          let skillsEl = addToTerminal(skills, typeSpeedFast, false);
+          break;
+
+        case 'social':
+          let socialHTML = generateContactHTML();
+          let socialEl = addHTMLToTerminal(socialHTML);
+          break;
+
+        case 'portfolio':
+          let portfolioHTML = generatePortfolioHTML();
+          let portfolioEl = addHTMLToTerminal(portfolioHTML);
+          break;
+
+        case 'quote':
+          let quoteEl = addToTerminal(getRandomQuote(), typeSpeedFast, false);
+          break;
+
+        case '':
+          break;
+        default:
+          console.log("I don't understand, please choose between these options:");
+          let commandNotFoundEl = addToTerminal(commandNotFound, typeSpeedFast, true);
+          let unknownEl = addToTerminal(listCommands, typeSpeedFast, false);
+          setTimeout(function() {
+
+          }, 4000);
+
+      }
+    }
+
+    function createAndAutofillEl(){
+
+    }
+
+    function init() {
+
+      setTimeout(function() {
+        let wakeupEl = addToTerminal(wakeUp, typeSpeedSlow, true);
+      }, 200);
+
+      setTimeout(function() {
+        let listEl = addToTerminal(list, typeSpeedFast, true);
+      }, 3500);
+
+      setTimeout(function() {
+        $('#term-prompt').html('&#9612;');
+        $('#terminal-line').show();
+        $('#term-prompt').focus();
+
+      }, 6500);
+      
+    }
   }
   }
 }
