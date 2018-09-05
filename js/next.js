@@ -235,8 +235,45 @@ $(document).ready (function() {
         $('#term-prompt').focus();
 
       }, 6500);
-      
+
     }
+
+    $('body').on('click', function() {
+      $('#term-prompt').focus();
+    });
+
+    $('#term-prompt').on('click', function() {
+      $('#term-prompt').focus();
+    });
+
+    $(".expand").on("click", function() {
+      $(".learn").delay(100).hide();
+      $("#short-bio").delay(200).show();
+
+      autotype('#short-bio', shortBio, 0, typeSpeedFast / 2);
+
+      $("#online-presence").delay(300).show();
+      $("#abilities").show();
+    });
+
+    $('#term-prompt').on("keydown", function(e) {
+      console.log("The button you're currently pressing has a code of " + e.which);
+
+      let keyEnter = 13,
+        keyArrowDown = 40,
+        keyArrowUp = 38;
+
+      if (e.which == keyEnter) {
+        if ($('#term-prompt').val() != termHistory[termHistory.length-1]) {
+          console.log('The input was different from the previous one.');
+          handleInput();
+        } else {
+          console.log("This input is the same as previous - it shouldn't be added.");
+        }
+
+        
+      }
+    })
   }
   }
 }
